@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>Copy Code</title>
+    <style>
+        .th-btn {
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            vertical-align: middle;
+            display: inline-block;
+            border: none;
+            text-transform: uppercase;
+            text-align: center;
+            background-color: #ff1d50;
+            color: #ffffff;
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            padding: 17.5px 26px;
+            min-width: 150px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .th-btn:before {
+            content: "";
+            position: absolute;
+            height: calc(100% + 2px);
+            width: calc(100% + 30px);
+            top: -1px;
+            right: 100%;
+            background-color: black;
+            z-index: -1;
+            transition: all 0.4s ease-out;
+            border-radius: inherit;
+            clip-path: polygon(calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%, 0 0);
+        }
+
+        .th-btn i {
+            transition: 0.4s transform ease-in-out;
+        }
+
+        .th-btn:hover,
+        .th-btn.active {
+            color: #ffffff;
+            box-shadow: none;
+        }
+
+        .th-btn:hover:before,
+        .th-btn.active:before {
+            right: -30px;
+        }
+
+        .th-btn:hover .fa-arrow-up-right {
+            transform: rotate(45deg);
+        }
+
+        a {
+            text-decoration: none;
+            outline: 0;
+            transition: all ease 0.4s;
+        }
+        .clicked{
+            background-color: black !important;
+        }
+
+
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" onclick=""></script
+
+  </head>
+<body>
+  <center>
+    <br><br><br>
+<a class="th-btn th_btn copy-to-clipboard" data-text="bhaj24EShiVTeLu">Copy Code</a> <br> <br> <br>
+<h3>Go to Telegram Bot</h3>   <br> <br>
+  
+<b>Telugu</b> >>> <a href="https://telegram.me/hindi_movies_ultimate_bot"><button class="th-btn">Go</button></a> <br> <br><br> 
+  </center>
+<script>
+    jQuery(document).ready(function($) {
+      $('.copy-to-clipboard').on('click', function(event) {
+        event.preventDefault(); // Prevent default anchor tag behavior
+
+        var text = $(this).data('text');
+
+        navigator.clipboard.writeText(text)
+          .then(() => {
+            // Update button text and class on success
+            $(this).text('Copied!'); // Replace button text with "Copied!"
+            $(this).addClass('clicked'); // Add a "clicked" class (if desired)
+          })
+          .catch(err => {
+            // Handle errors gracefully (e.g., display an error message)
+            console.error('Failed to copy text: ', err);
+          });
+      });
+    });
+  </script></body>
+  
+</html>
